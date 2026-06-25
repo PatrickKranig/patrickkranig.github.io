@@ -2,11 +2,671 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Patrick Kranig | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Patrick Kranig - Microsoft Power Platform, Azure und Anwendungsentwicklung. Bewerbungsprofil, Lebenslauf und Zertifikate.">
+  <title>Patrick Kranig | Microsoft Power Platform & Azure</title>
+  <style>
+    :root {
+      --bg: #151716;
+      --header: #222423;
+      --surface: #1b1d1c;
+      --surface-soft: #202322;
+      --line: #303633;
+      --text: #f1f1ee;
+      --muted: #c6c8c2;
+      --subtle: #949891;
+      --accent: #7fcad5;
+      --accent-warm: #8a2635;
+      --shadow: #050605;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration-color: var(--accent);
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(21, 23, 22, 0.96);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1500px;
+      min-height: 76px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      min-width: 0;
+      margin: 0;
+      font-size: 1.65rem;
+      line-height: 1.2;
+      font-weight: 800;
+      color: var(--text);
+      text-shadow: 2px 2px 0 var(--shadow);
+    }
+
+    .top-nav {
+      min-width: 0;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 1.05rem;
+      white-space: nowrap;
+    }
+
+    .top-nav a {
+      flex: 0 1 auto;
+      text-decoration: none;
+      color: var(--text);
+      text-shadow: 1px 1px 0 var(--shadow);
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus-visible {
+      color: var(--accent);
+    }
+
+    .page {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 44px 32px 72px;
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 76px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 114px;
+      align-self: start;
+      min-width: 0;
+    }
+
+    .portrait {
+      width: 164px;
+      aspect-ratio: 1;
+      display: block;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      outline: 8px solid #101211;
+      margin: 0 0 26px;
+      background: var(--surface);
+    }
+
+    .sidebar h2 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+      line-height: 1.25;
+      text-shadow: 2px 2px 0 var(--shadow);
+    }
+
+    .role {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.55;
+      overflow-wrap: break-word;
+    }
+
+    .side-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.98rem;
+    }
+
+    .side-list a,
+    .side-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .side-list a:hover,
+    .side-list a:focus-visible {
+      color: var(--accent);
+    }
+
+    .side-label {
+      width: 28px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    main {
+      min-width: 0;
+      max-width: 980px;
+    }
+
+    section {
+      padding: 0 0 46px;
+      margin: 0 0 46px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 116px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.2;
+      color: var(--text);
+      text-shadow: 2px 2px 0 var(--shadow);
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: 2.25rem;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.55rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      text-shadow: none;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      overflow-wrap: break-word;
+    }
+
+    .lead {
+      font-size: 1.18rem;
+      color: var(--text);
+    }
+
+    .accent-line {
+      width: 88px;
+      height: 3px;
+      margin: 0 0 28px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+    }
+
+    .quick-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .quick-facts li {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface-soft);
+      padding: 8px 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.3;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 6px;
+    }
+
+    .focus-item {
+      border-left: 3px solid var(--accent);
+      padding: 2px 0 2px 18px;
+    }
+
+    .focus-item p {
+      margin: 6px 0 0;
+      font-size: 0.96rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 24px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(198, 200, 194, 0.12);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .period {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .timeline-item p {
+      margin: 6px 0 0;
+      font-size: 0.98rem;
+    }
+
+    .cert-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .cert-list li {
+      margin: 6px 0;
+    }
+
+    .document-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .document-link {
+      min-height: 116px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      padding: 18px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .document-link:hover,
+    .document-link:focus-visible {
+      border-color: var(--accent);
+      background: #202625;
+      color: var(--text);
+    }
+
+    .document-link strong {
+      display: block;
+      font-size: 1.02rem;
+      line-height: 1.35;
+    }
+
+    .document-link span {
+      color: var(--subtle);
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .button-link {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px 16px;
+      background: var(--surface-soft);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button-link.primary {
+      border-color: var(--accent);
+      background: #1e3032;
+    }
+
+    .button-link:hover,
+    .button-link:focus-visible {
+      color: var(--text);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 32px 36px;
+      color: var(--subtle);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 960px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 22px;
+        gap: 14px;
+      }
+
+      .top-nav {
+        width: 100%;
+        gap: 18px;
+        flex-wrap: wrap;
+        overflow: visible;
+        font-size: 0.98rem;
+        white-space: normal;
+      }
+
+      .page {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        padding: 34px 22px 58px;
+      }
+
+      .sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 136px minmax(0, 1fr);
+        gap: 24px;
+        align-items: center;
+      }
+
+      .portrait {
+        width: 136px;
+        margin: 0;
+      }
+
+      .side-list {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .sidebar > div {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 16px;
+      }
+
+      .header-inner {
+        padding-right: 42px;
+      }
+
+      .page {
+        padding-right: 42px;
+      }
+
+      main,
+      .sidebar {
+        max-width: 320px;
+      }
+
+      .brand {
+        font-size: 1.35rem;
+      }
+
+      h1 {
+        font-size: 1.85rem;
+      }
+
+      h2 {
+        font-size: 1.35rem;
+      }
+
+      .sidebar,
+      .focus-grid,
+      .document-list,
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        width: 128px;
+      }
+
+      .side-list {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding-bottom: 36px;
+        margin-bottom: 36px;
+      }
+
+      footer {
+        padding-right: 42px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .header-inner,
+      .page,
+      footer {
+        padding-right: 22px;
+      }
+
+      .top-nav,
+      main,
+      .sidebar {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hallo, ich bin Patrick Kranig</h1>
-  <p>Das ist meine erste GitHub-Pages-Portfolioseite.</p>
-  <p>GitHub-Pages-Verbindungstest: Update vom 24.06.2026.</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="brand">Patrick Kranig</p>
+      <nav class="top-nav" aria-label="Hauptnavigation">
+        <a href="#about">About</a>
+        <a href="#profil">Profil</a>
+        <a href="#dokumente">Dokumente</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <aside class="sidebar" aria-label="Kurzprofil">
+      <img class="portrait" src="assets/patrick-kranig.jpg" alt="Bewerbungsfoto von Patrick Kranig">
+
+      <div>
+        <h2>Patrick Kranig</h2>
+        <p class="role">Microsoft Power Platform Developer, Azure Data Engineer & Principal Technical Consultant</p>
+      </div>
+
+      <ul class="side-list">
+        <li><span><span class="side-label">Ort</span>Leipzig, Deutschland</span></li>
+        <li><a href="assets/documents/lebenslauf-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">CV</span>Lebenslauf</a></li>
+        <li><a href="assets/documents/kompetenzprofil-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">PDF</span>Kompetenzprofil</a></li>
+        <li><a href="assets/documents/microsoft-zertifikate-auswahl-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">MS</span>Zertifikate Auswahl</a></li>
+        <li><a href="https://www.linkedin.com/in/patrickkranig/" target="_blank" rel="me noopener noreferrer"><span class="side-label">in</span>LinkedIn</a></li>
+        <li><a href="https://github.com/PatrickKranig" target="_blank" rel="me noopener noreferrer"><span class="side-label">Git</span>GitHub</a></li>
+        <li><a href="mailto:Patrick.Kranig@live.de"><span class="side-label">@</span>E-Mail</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="about">
+        <h1>About</h1>
+        <div class="accent-line" aria-hidden="true"></div>
+        <p class="lead">Ich bin Patrick Kranig, Fachinformatiker für Anwendungsentwicklung mit Schwerpunkt Microsoft 365, Power Platform und Azure.</p>
+        <p>Ich verbinde Softwareentwicklung, Beratung und Prozessverständnis: von Power Apps und Power Automate über Dataverse, SharePoint Online und Power BI bis C#, SQL, Azure DevOps und Dynamics 365. Besonders stark bin ich dort, wo Fachbereiche konkrete Abläufe digitalisieren wollen und daraus robuste, wartbare Lösungen entstehen sollen.</p>
+        <p>Aus Rollen als Principal Technical Consultant, Software Architect, Consultant, Trainer und Entwickler bringe ich Erfahrung in Remote-Setups, hybriden Teams und direkter Zusammenarbeit mit Anwenderinnen, Anwendern und technischen Stakeholdern mit.</p>
+
+        <ul class="quick-facts" aria-label="Kurzfakten">
+          <li>Microsoft Power Platform</li>
+          <li>Azure & Dataverse</li>
+          <li>C# / .NET / SQL</li>
+          <li>Beratung & Training</li>
+          <li>Deutsch Muttersprache</li>
+        </ul>
+      </section>
+
+      <section id="profil">
+        <h2>Profil</h2>
+        <div class="focus-grid">
+          <article class="focus-item">
+            <h3>Power Platform Development</h3>
+            <p>Canvas Apps, Model-Driven Apps, Power Fx, Dataverse, Business Process Flows und Power Automate Cloud/Desktop Flows.</p>
+          </article>
+          <article class="focus-item">
+            <h3>Microsoft 365 & Dynamics</h3>
+            <p>SharePoint Online, Teams, Forms, Exchange Online, Dynamics 365 Sales sowie Business Central/NAV-nahe Beratung und Support.</p>
+          </article>
+          <article class="focus-item">
+            <h3>Azure & Daten</h3>
+            <p>Azure Administration, Azure DevOps, Azure Data Factory, SQL-Datenbanken, Datenmodellierung und Integrationsszenarien.</p>
+          </article>
+          <article class="focus-item">
+            <h3>Technische Umsetzung</h3>
+            <p>C#, JavaScript, HTML/CSS, GitHub, Schnittstellen, Prozessmodellierung und saubere Übergabe an Betrieb oder Fachbereiche.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="erfahrung">
+        <h2>Ausgewählte Stationen</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="period">2026</div>
+            <div>
+              <h3>DIGITALL Nature Germany GmbH</h3>
+              <p>Principal Technical Consultant mit Schwerpunkt Microsoft & Azure, 100% remote aus Leipzig.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="period">2025</div>
+            <div>
+              <h3>adesso SE</h3>
+              <p>Software Architect im Microsoft-Umfeld, hybrid mit Fokus auf Architektur, Umsetzung und Beratung.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="period">2022 - 2024</div>
+            <div>
+              <h3>Saphir Unternehmensberatung GmbH</h3>
+              <p>Consultant, Trainer und Fachinformatiker Anwendungsentwicklung mit Schwerpunkt Microsoft Power Platform.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="period">2020 - 2022</div>
+            <div>
+              <h3>CIT IT-Services GmbH</h3>
+              <p>Anwendungsentwicklung im Microsoft-Umfeld mit Praxis in Entwicklung, Support und Kundenanforderungen.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="zertifikate">
+        <h2>Zertifizierungen</h2>
+        <p>Auswahl nach Lebenslauf und Kompetenzprofil:</p>
+        <ul class="cert-list">
+          <li>Microsoft Certified: Power Platform Fundamentals (PL-900)</li>
+          <li>Microsoft Certified: Power Platform App Maker Associate (PL-100)</li>
+          <li>Microsoft Certified: Power Platform Functional Consultant (PL-200)</li>
+          <li>Microsoft Certified: Power Platform Developer Associate (PL-400)</li>
+          <li>Microsoft Certified: Power Automate RPA Developer Associate (PL-500)</li>
+          <li>Microsoft Certified: Azure Data Fundamentals (DP-900) und Azure Fundamentals (AZ-900)</li>
+        </ul>
+      </section>
+
+      <section id="dokumente">
+        <h2>Dokumente</h2>
+        <p>Die wichtigsten Bewerbungsunterlagen liegen direkt im Repository und öffnen sich als PDF.</p>
+
+        <div class="document-list">
+          <a class="document-link" href="assets/documents/lebenslauf-patrick-kranig.pdf" target="_blank" rel="noopener">
+            <strong>Lebenslauf</strong>
+            <span>Werdegang, Ausbildung, Kenntnisse und Kontaktdaten</span>
+          </a>
+          <a class="document-link" href="assets/documents/kompetenzprofil-patrick-kranig.pdf" target="_blank" rel="noopener">
+            <strong>Kompetenzprofil</strong>
+            <span>Skill-Matrix, Einsatzbereiche und Projekterfahrung</span>
+          </a>
+          <a class="document-link" href="assets/documents/microsoft-zertifikate-auswahl-patrick-kranig.pdf" target="_blank" rel="noopener">
+            <strong>Ausgewählte Microsoft Zertifikate</strong>
+            <span>Kompakte Auswahl relevanter Microsoft-Zertifizierungen</span>
+          </a>
+          <a class="document-link" href="assets/documents/alle-zertifikate-patrick-kranig.pdf" target="_blank" rel="noopener">
+            <strong>Alle Zertifikate</strong>
+            <span>Vollständige Zertifikatsmappe als PDF</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Ich freue mich über passende Rollen in Entwicklung, Beratung, Architektur und Microsoft-Power-Platform-Projekten. Standort ist Leipzig, remote oder hybrid nach Absprache.</p>
+        <div class="contact-actions">
+          <a class="button-link primary" href="mailto:Patrick.Kranig@live.de">E-Mail schreiben</a>
+          <a class="button-link" href="https://www.linkedin.com/in/patrickkranig/" target="_blank" rel="me noopener noreferrer">LinkedIn ansehen</a>
+          <a class="button-link" href="assets/documents/lebenslauf-patrick-kranig.pdf" target="_blank" rel="noopener">Lebenslauf öffnen</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>Patrick Kranig - Bewerbungsprofil - zuletzt aktualisiert am 25.06.2026</span>
+  </footer>
 </body>
 </html>
