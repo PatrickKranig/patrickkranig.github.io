@@ -182,6 +182,19 @@
       text-transform: uppercase;
     }
 
+    .side-text {
+      min-width: 0;
+    }
+
+    .side-date {
+      display: block;
+      color: var(--subtle);
+      font-size: 0.82em;
+      font-style: italic;
+      line-height: 1.25;
+      margin-top: 2px;
+    }
+
     main {
       min-width: 0;
       max-width: 980px;
@@ -269,148 +282,31 @@
 
     .microsoft-visual {
       position: relative;
-      min-height: 132px;
+      min-height: 148px;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 6px;
       background: var(--surface);
-      padding: 14px;
-      isolation: isolate;
+      padding: 16px;
     }
 
-    .microsoft-visual::before {
-      content: "";
-      position: absolute;
-      inset: auto -24px -34px auto;
-      width: 104px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      opacity: 0.38;
-      filter: blur(1px);
-      z-index: -1;
-    }
-
-    .microsoft-visual.power::before {
-      background: #742774;
-    }
-
-    .microsoft-visual.azure::before {
-      background: #0078d4;
-    }
-
-    .microsoft-visual.dynamics::before {
-      background: #2b88d8;
-    }
-
-    .microsoft-visual.data::before {
-      background: #107c10;
-    }
-
-    .tile-grid {
-      width: 58px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 5px;
-      margin-bottom: 18px;
-    }
-
-    .tile-grid span {
-      aspect-ratio: 1;
-      border-radius: 3px;
-      background: var(--accent);
-    }
-
-    .tile-grid span:nth-child(1) {
-      background: #f25022;
-    }
-
-    .tile-grid span:nth-child(2) {
-      background: #7fba00;
-    }
-
-    .tile-grid span:nth-child(3) {
-      background: #00a4ef;
-    }
-
-    .tile-grid span:nth-child(4) {
-      background: #ffb900;
-    }
-
-    .visual-mark {
+    .logo-plate {
       width: 70px;
-      height: 50px;
-      margin-bottom: 20px;
-      position: relative;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: #f6f7f8;
+      margin-bottom: 16px;
+      padding: 10px;
     }
 
-    .visual-mark::before,
-    .visual-mark::after {
-      content: "";
-      position: absolute;
-      border: 2px solid currentColor;
-      opacity: 0.9;
-    }
-
-    .azure .visual-mark {
-      color: #7fcad5;
-    }
-
-    .azure .visual-mark::before {
-      width: 38px;
-      height: 38px;
-      left: 4px;
-      top: 6px;
-      transform: skew(-18deg);
-    }
-
-    .azure .visual-mark::after {
-      width: 24px;
-      height: 24px;
-      right: 4px;
-      bottom: 2px;
-      transform: skew(-18deg);
-    }
-
-    .dynamics .visual-mark {
-      color: #8dd7f2;
-    }
-
-    .dynamics .visual-mark::before {
-      width: 48px;
-      height: 28px;
-      left: 2px;
-      top: 10px;
-      border-radius: 4px;
-    }
-
-    .dynamics .visual-mark::after {
-      width: 22px;
-      height: 22px;
-      right: 4px;
-      bottom: 4px;
-      border-radius: 50%;
-    }
-
-    .data .visual-mark {
-      color: #8ee6a4;
-    }
-
-    .data .visual-mark::before {
-      width: 48px;
-      height: 16px;
-      left: 4px;
-      top: 4px;
-      border-radius: 50%;
-      box-shadow: 0 16px 0 -2px currentColor, 0 32px 0 -2px currentColor;
-    }
-
-    .data .visual-mark::after {
-      width: 48px;
-      height: 42px;
-      left: 4px;
-      top: 12px;
-      border-top: 0;
-      border-radius: 0 0 24px 24px;
+    .product-logo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
     }
 
     .visual-title {
@@ -712,10 +608,10 @@
 
       <ul class="side-list">
         <li><span><span class="side-label">Ort</span>Leipzig, Deutschland</span></li>
-        <li><a href="assets/documents/lebenslauf-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">CV</span>Lebenslauf - Stand Juni 2026</a></li>
-        <li><a href="assets/documents/kompetenzprofil-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">PDF</span>Kompetenzprofil - Stand Juni 2026</a></li>
-        <li><a href="assets/documents/microsoft-zertifikate-auswahl-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">MS</span>Microsoft Zertifikate - Stand Juli 2026</a></li>
-        <li><a href="assets/documents/alle-zertifikate-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">All</span>Alle Zertifikate - Stand Juli 2026</a></li>
+        <li><a href="assets/documents/lebenslauf-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">CV</span><span class="side-text">Lebenslauf <span class="side-date">(Stand Juni 2026)</span></span></a></li>
+        <li><a href="assets/documents/kompetenzprofil-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">PDF</span><span class="side-text">Kompetenzprofil <span class="side-date">(Stand Juni 2026)</span></span></a></li>
+        <li><a href="assets/documents/microsoft-zertifikate-auswahl-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">MS</span><span class="side-text">Microsoft Zertifikate <span class="side-date">(Stand Juli 2026)</span></span></a></li>
+        <li><a href="assets/documents/alle-zertifikate-patrick-kranig.pdf" target="_blank" rel="noopener"><span class="side-label">All</span><span class="side-text">Alle Zertifikate <span class="side-date">(Stand Juli 2026)</span></span></a></li>
         <li><a href="https://www.linkedin.com/in/patrickkranig/" target="_blank" rel="me noopener noreferrer"><span class="side-label">in</span>LinkedIn</a></li>
         <li><a href="https://github.com/PatrickKranig" target="_blank" rel="me noopener noreferrer"><span class="side-label">Git</span>GitHub</a></li>
         <li><a href="mailto:Patrick.Kranig@live.de"><span class="side-label">@</span>E-Mail</a></li>
@@ -732,28 +628,31 @@
 
         <div class="microsoft-visuals" aria-label="Microsoft Schwerpunkte">
           <div class="microsoft-visual power">
-            <div class="tile-grid" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+            <div class="logo-plate">
+              <img class="product-logo" src="assets/product-logos/power-platform.png" alt="Microsoft Power Platform Logo">
             </div>
             <span class="visual-title">Power Platform</span>
             <span class="visual-subtitle">Apps, Automate, Dataverse</span>
           </div>
           <div class="microsoft-visual azure">
-            <div class="visual-mark" aria-hidden="true"></div>
+            <div class="logo-plate">
+              <img class="product-logo" src="assets/product-logos/azure.png" alt="Microsoft Azure Logo">
+            </div>
             <span class="visual-title">Azure</span>
             <span class="visual-subtitle">Cloud, DevOps, Integration</span>
           </div>
           <div class="microsoft-visual dynamics">
-            <div class="visual-mark" aria-hidden="true"></div>
+            <div class="logo-plate">
+              <img class="product-logo" src="assets/product-logos/dynamics-365-sales.svg" alt="Microsoft Dynamics 365 Sales Logo">
+            </div>
             <span class="visual-title">Dynamics 365</span>
             <span class="visual-subtitle">CRM, Prozesse, Beratung</span>
           </div>
           <div class="microsoft-visual data">
-            <div class="visual-mark" aria-hidden="true"></div>
-            <span class="visual-title">Data & BI</span>
+            <div class="logo-plate">
+              <img class="product-logo" src="assets/product-logos/power-bi.svg" alt="Microsoft Power BI Logo">
+            </div>
+            <span class="visual-title">Power BI & Data</span>
             <span class="visual-subtitle">SQL, Power BI, Fabric</span>
           </div>
         </div>
