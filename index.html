@@ -107,7 +107,7 @@
       margin: 0 auto;
       padding: 44px 32px 72px;
       display: grid;
-      grid-template-columns: 300px minmax(0, 1fr);
+      grid-template-columns: 320px minmax(0, 1fr);
       gap: 76px;
     }
 
@@ -115,7 +115,31 @@
       position: sticky;
       top: 114px;
       align-self: start;
+      max-height: calc(100vh - 138px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding-right: 10px;
+      scrollbar-color: var(--line) transparent;
+      scrollbar-gutter: stable;
+      scrollbar-width: thin;
       min-width: 0;
+    }
+
+    .sidebar::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+      background: var(--line);
+      border-radius: 999px;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
     }
 
     .portrait {
@@ -487,6 +511,9 @@
 
       .sidebar {
         position: static;
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
         display: grid;
         grid-template-columns: 136px minmax(0, 1fr);
         gap: 24px;
